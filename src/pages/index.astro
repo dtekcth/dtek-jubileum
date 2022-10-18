@@ -1,0 +1,53 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Event from "../components/Event.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="DTEK 40 år">
+  <Navbar />
+  <div class="container mx-auto">
+    <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w-2/3">
+      <section class="text-center p-4" id="hero">
+        <h2 class="font-bold text-lg hidden md:block">
+          Datateknologsektionens 40-årsjubileum
+        </h2>
+        <p>
+          Jubileumet kommer äga rum vecka 19, 8e - 14e maj 2023. Under veckan
+          kommer du ha möjlighet att delta i flera olika evenemang arrangerade
+          av sektionens olika kommitéer. Vi hoppas att ni ser framemot detta
+          lika mycket som vi!
+        </p>
+      </section>
+      <section class="p-4" id="hero">
+        <h2 class="text-center font-bold text-lg pb-4">Evenemang</h2>
+        <div class="flex flex-col gap-4">
+          <Event
+            title="Bankett med Jubileumsarbetsgruppen"
+            description="Gå på em fet bankett. Biljettförsäljning kommer ske på länken här under!"
+            img={"banket.jpeg"}
+            callToAction={"Köp biljett!"}
+          />
+          <Event
+            title="Bastu med DKAK och D6"
+            description="Häng med ut till Härryda för lite bad och bastu med D6 och DKAK. Biljettförsäljning kommer ske på länken här under!"
+            img={"bastu.jpeg"}
+            callToAction={"Köp biljett!"}
+          />
+          <Event
+            title="Spelkväll med DLude"
+            description="Häng med på en kul spelkväll med DLude på liseberg!"
+            img={"spel.jpeg"}
+            noCallToAction
+          />
+          <Event
+            title="Lyxpub med Delta"
+            description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+            img={"lyxpub.jpeg"}
+            noCallToAction
+          />
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
