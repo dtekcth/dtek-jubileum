@@ -5,7 +5,6 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="DTEK 40 år">
-  <Navbar />
   <div class="container mx-auto">
     <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w-2/3">
       <section class="text-center p-4" id="hero">
@@ -13,40 +12,59 @@ import Layout from "../layouts/Layout.astro";
           Datateknologsektionens 40-årsjubileum
         </h2>
         <p>
-          Jubileumet kommer äga rum vecka 19, 8e - 14e maj 2023. Under veckan
+          Jubileumet kommer äga rum vecka 19, 8e-14e maj 2023. Under veckan
           kommer du ha möjlighet att delta i flera olika evenemang arrangerade
           av sektionens olika kommitéer. Vi hoppas att ni ser framemot detta
           lika mycket som vi!
         </p>
-      </section>
-      <section class="p-4" id="hero">
-        <h2 class="text-center font-bold text-lg pb-4">Evenemang</h2>
-        <div class="flex flex-col gap-4">
-          <Event
-            title="Bankett med Jubileumsarbetsgruppen"
-            description="Gå på em fet bankett. Biljettförsäljning kommer ske på länken här under!"
-            img={"banket.jpeg"}
-            callToAction={"Köp biljett!"}
-          />
-          <Event
-            title="Bastu med DKAK och D6"
-            description="Häng med ut till Härryda för lite bad och bastu med D6 och DKAK. Biljettförsäljning kommer ske på länken här under!"
-            img={"bastu.jpeg"}
-            callToAction={"Köp biljett!"}
-          />
-          <Event
-            title="Spelkväll med DLude"
-            description="Häng med på en kul spelkväll med DLude på liseberg!"
-            img={"spel.jpeg"}
-            noCallToAction
-          />
-          <Event
-            title="Lyxpub med Delta"
-            description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
-            img={"lyxpub.jpeg"}
-            noCallToAction
-          />
+
+        <div class="pt-4">
+          <a
+            href="formulär"
+            class="text-lg font-bold cursor-pointerrounded text-white bg-[#fa6607] hover:bg-[#d3641f] p-4 rounded"
+            >{"Intresseanmälan"}</a
+          >
         </div>
+        <section class="p-4" id="events">
+          <h2 class="text-center font-bold text-lg p-4">Evenemang</h2>
+          <div class="flex flex-col gap-4">
+            <Event
+              title="Öppningscermoni med Programledningen"
+              datum="8/5"
+              description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+              img={"oppningscermoni.jpg"}
+              callToAction={"Läs mer på Facebook!"}
+              link={"/exempel"}
+            />
+            <Event
+              title="Lyxpub med Delta"
+              datum="9/5"
+              description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+              img={"lyxpub.jpg"}
+              callToAction={"Boka en plats!"}
+            />
+            <Event
+              title="Spelkväll med DLude"
+              datum="11/5"
+              description="Häng med på en kul spelkväll med DLude på i Spelhuset på Liseberg!"
+              img={"spel.jpg"}
+              link={"/"}
+            />
+            <Event
+              title="Bastu med DKAK och D6"
+              datum="12/5"
+              description="Häng med ut till Härryda för lite sittning, bad och bastu med D6 och DKAK. Biljettförsäljning kommer ske på länken här under!"
+              img={"bastu.jpg"}
+            />
+            <Event
+              title="Bankett med Jubileumsarbetsgruppen"
+              description="Gå på en fet bankett. Biljettförsäljning kommer ske på länken här under!"
+              datum="13/5"
+              img={"banket.jpg"}
+              callToAction={"Läs mer"}
+            />
+          </div>
+        </section>
       </section>
     </main>
   </div>

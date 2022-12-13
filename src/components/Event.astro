@@ -3,21 +3,27 @@ export interface Props {
   title: string;
   description: string;
   img: string;
+  datum: string;
+  link?: string;
   callToAction?: string;
   noCallToAction?: boolean;
 }
-const { callToAction, title, description, img, noCallToAction } = Astro.props;
+const { callToAction, title, description, img, noCallToAction, link, datum } =
+  Astro.props;
 ---
 
 <div
-  class="flex flex-col-reverse md:flex-row gap-2 rounded shadow-lg border p-4"
+  class="flex flex-col-reverse md:flex-row gap-2 rounded shadow-lg border p-4 relative"
 >
   <div class="md:before:w-1/2 flex flex-col text-center md:text-left pt-2">
-    <h3 class="font-medium text-lg">{title}</h3>
+    <h3 class="font-medium text-lg cursor-default pb-0">{title}</h3>
     <div class="flex flex-col flex-grow justify-between">
       <p>{description}</p>{
         !noCallToAction && (
-          <a class="cursor-pointer font-bold text-center hover:underline">
+          <a
+            href={link ? link : "/"}
+            class="cursor-pointer font-bold text-center hover:underline"
+          >
             {callToAction ? callToAction : "Anmäl dig nu!"}
           </a>
         )
@@ -26,4 +32,9 @@ const { callToAction, title, description, img, noCallToAction } = Astro.props;
   </div>
   <hr class="md:hidden" />
   <img class="rounded object-contain md:w-1/2" src={img} alt="" />
+  <div
+    class="absolute cursor-default font-bold cursor default top-6 right-6 text-white bg-[#fa6607] p-4 rounded-full aspect-square text-xs flex items-center justify-center"
+  >
+    {datum}
+  </div>
 </div>
