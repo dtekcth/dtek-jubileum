@@ -4,15 +4,36 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="DTEK 40 år">
+  <style>
+    html {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+    h1 {
+      margin: 8px;
+      font-weight: bold;
+      font-size: xx-large;
+    }
+    .date {
+      font-weight: bold;
+      font-size: large;
+      margin: 8px;
+    }
+    Event:hover {
+      cursor: pointer;
+    }
+    .pt-4 {margin: 17px;}
+  </style>
   <div class="container mx-auto">
     <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w-2/3">
       <section class="text-center p-4" id="hero">
-        <h2 class="font-bold text-lg hidden md:block">
-          Datateknologsektionens 40-årsjubileum
+        <h1>
+          Välkommen till Dataeknologsektionens jubileumsvecka
+        </h1>
+        <h2 class="date">
+          8e-14e maj 2023
         </h2>
         <p>
-          Jubileumet kommer äga rum vecka 19, 8e-14e maj 2023. Under veckan
-          kommer du ha möjlighet att delta i flera olika evenemang arrangerade
+          Under veckan kommer du ha möjlighet att delta i flera olika evenemang arrangerade
           av sektionens olika kommitéer. Vi hoppas att ni ser framemot detta
           lika mycket som vi!
         </p>
@@ -31,36 +52,60 @@ import Layout from "../layouts/Layout.astro";
               title="Öppningscermoni med Programledningen"
               datum="8/5"
               description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+              time="19:00 - 01:00"
+              place="Kårhuset"
+              nrOfTickets="100"
               img={"oppningscermoni.jpg"}
               callToAction={"Läs mer på Facebook!"}
-              link={"/exempel"}
+              link={"https://www.facebook.com"}
+              active= {true}
             />
             <Event
               title="Lyxpub med Delta"
               datum="9/5"
               description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+              time="19:00 - 01:00"
+              place="Basen"
+              nrOfTickets="100"
               img={"lyxpub.jpg"}
               callToAction={"Boka en plats!"}
+              active= {false}
+              ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
             <Event
               title="Spelkväll med DLude"
               datum="11/5"
               description="Häng med på en kul spelkväll med DLude på i Spelhuset på Liseberg!"
+              time="19:00 - 01:00"
+              place="Lisebergs spelhus"
+              nrOfTickets="100"
               img={"spel.jpg"}
               link={"/"}
+              active= {false}
+              ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
             <Event
               title="Bastu med DKAK och D6"
               datum="12/5"
               description="Häng med ut till Härryda för lite sittning, bad och bastu med D6 och DKAK. Biljettförsäljning kommer ske på länken här under!"
+              time="19:00 - 01:00"
+              place="Chalmersbastun"
+              nrOfTickets="100"
               img={"bastu.jpg"}
+              active= {false}
+              ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
             <Event
               title="Bankett med Jubileumsarbetsgruppen"
               description="Gå på en fet bankett. Biljettförsäljning kommer ske på länken här under!"
               datum="13/5"
+              time="19:00 - 01:00"
+              place="Basen"
+              nrOfTickets="100"
               img={"banket.jpg"}
               callToAction={"Läs mer"}
+              active= {false}
+              ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
           </div>
         </section>

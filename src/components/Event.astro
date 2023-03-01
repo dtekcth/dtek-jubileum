@@ -3,38 +3,71 @@ export interface Props {
   title: string;
   description: string;
   img: string;
+  time: string;
+  place: string;
+  nrOfTickets: string;
   datum: string;
   link?: string;
   callToAction?: string;
-  noCallToAction?: boolean;
+  active: boolean;
+  ticketInfo?:string;
 }
-const { callToAction, title, description, img, noCallToAction, link, datum } =
+const { callToAction, title, description, time, place, nrOfTickets, img, link, datum, active, ticketInfo } =
   Astro.props;
 ---
 
 <div
-  class="flex flex-col-reverse md:flex-row gap-2 rounded shadow-lg border p-4 relative"
+  class="flex flex-col-reverse md:flex-row gap-2 rounded shadow-lg border relative"
 >
-  <div class="md:before:w-1/2 flex flex-col text-center md:text-left pt-2">
-    <h3 class="font-medium text-lg cursor-default pb-0">{title}</h3>
-    <div class="flex flex-col flex-grow justify-between">
-      <p>{description}</p>{
-        !noCallToAction && (
-          <a
-            href={link ? link : "/"}
-            class="cursor-pointer font-bold text-center hover:underline"
-          >
-            {callToAction ? callToAction : "Anmäl dig nu!"}
-          </a>
+  <img class="rounded-right object-contain md:w-1/2 top-0" src={img} alt="" />
+    <div
+      class="absolute cursor-default font-bold cursor default top-6 left-6 text-white bg-[#fa6607] p-4 rounded-full aspect-square text-xs flex items-center justify-center"
+    >
+      {datum}
+    </div>
+  <div class="md:before:w-1/2 flex flex-col text-center py-2 px-4">
+    <h3 id="event-title" class="font-medium text-lg cursor-default md:text-center pb-0">{title}</h3>
+    <div id="event-content" class="flex flex-col flex-grow justify-between">
+
+      <p id="event-description" class="md:text-center m-4">{description}</p>
+
+      <div class="flex flex-row flow-grow justify-left md:text-left">
+        <div id="line" class ="bg-[#a7a7a7] w-1 rounded m-3"></div>
+        <div id="info" class="flex flex-col justify-between">
+          <p id="time" class="flex flex-row align-items-center my-1">
+            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> schedule </span>
+            {time}
+          </p>
+          <p id="place" class="flex flex-row align-items-center my-1"> 
+            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> location_on </span>
+            {place}
+          </p>
+          <p id="tickets" class="flex flex-row align-items-center my-1">
+            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> local_activity </span>
+            {nrOfTickets + " st"}
+          </p>
+        </div>
+      </div>
+      {
+        active && (
+          <a href={link} target="_blank">
+            <button type="button" class="bg-[#fa6607] rounded cursor-pointer font-bold text-center text-white p-2 my-5 md:w-1/2">
+              {callToAction ? callToAction : "Anmäl dig nu!"}
+            </button>
+        </a>
         )
       }
+      {
+        !active && (
+          <div class="mt-7 mb-2">
+            <button type="button" disabled class="bg-[#FDD1B4] rounded font-bold text-center text-white p-2 md:w-1/2">
+              {callToAction ? callToAction : "Anmäl dig nu!"}
+            </button>
+            <p class="text-[#fa6607]">{ticketInfo}</p>
+          </div>
+        )
+      }
+    
     </div>
-  </div>
-  <hr class="md:hidden" />
-  <img class="rounded object-contain md:w-1/2" src={img} alt="" />
-  <div
-    class="absolute cursor-default font-bold cursor default top-6 right-6 text-white bg-[#fa6607] p-4 rounded-full aspect-square text-xs flex items-center justify-center"
-  >
-    {datum}
   </div>
 </div>
