@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="DTEK 40 år">
   <style>
     html {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     h1 {
       margin: 8px;
@@ -24,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
     .pt-4 {margin: 17px;}
   </style>
   <div class="container mx-auto">
-    <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w-2/3">
+    <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w">
       <section class="text-center p-4" id="hero">
         <h1>
           Välkommen till Dataeknologsektionens jubileumsvecka
@@ -48,6 +48,7 @@ import Layout from "../layouts/Layout.astro";
         <section class="p-4" id="events">
           <h2 class="text-center font-bold text-lg p-4">Evenemang</h2>
           <div class="flex flex-col gap-4">
+          <div class="flex flex-row flex-no-wrap gap-4 md:w">
             <Event
               title="Öppningscermoni med Programledningen"
               datum="8/5"
@@ -67,11 +68,13 @@ import Layout from "../layouts/Layout.astro";
               time="19:00 - 01:00"
               place="Basen"
               nrOfTickets="100"
-              img={"lyxpub.jpg"}
+              img={"pub2.jpg"}
               callToAction={"Boka en plats!"}
               active= {false}
               ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
+            </div>
+            <div class="flex flex-row flex-no-wrap gap-4 md:w">
             <Event
               title="Spelkväll med DLude"
               datum="11/5"
@@ -91,10 +94,11 @@ import Layout from "../layouts/Layout.astro";
               time="19:00 - 01:00"
               place="Chalmersbastun"
               nrOfTickets="100"
-              img={"bastu.jpg"}
+              img={"bastulokal.jpg"}
               active= {false}
               ticketInfo={"Biljettsläpp x/x kl: x/x"}
             />
+            </div>
             <Event
               title="Bankett med Jubileumsarbetsgruppen"
               description="Gå på en fet bankett. Biljettförsäljning kommer ske på länken här under!"

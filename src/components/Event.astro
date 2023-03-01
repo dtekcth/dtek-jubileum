@@ -17,33 +17,51 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
 ---
 
 <div
-  class="flex flex-col-reverse md:flex-row gap-2 rounded shadow-lg border relative"
+  id="event-card" class="flex flex-row gap-2 rounded shadow-lg border relative md:w-1/2"
 >
-  <img class="rounded-right object-contain md:w-1/2 top-0" src={img} alt="" />
-    <div
-      class="absolute cursor-default font-bold cursor default top-6 left-6 text-white bg-[#fa6607] p-4 rounded-full aspect-square text-xs flex items-center justify-center"
-    >
-      {datum}
-    </div>
-  <div class="md:before:w-1/2 flex flex-col text-center py-2 px-4">
+  <style>
+    #event-title{
+      font-size: 18px;
+    }
+    #info{
+      font-size: 18px
+    }
+    #info span{
+      color: #fa6607
+    }
+    #half {
+      display: flex;
+      flex: 1;
+    }
+  </style>
+  <div id="half" class="rounded-right">
+    <img class="object-cover" style="border-radius: 4px 0px 0px 4px;" src={img} alt="" />
+      <div
+        class="absolute cursor-default font-bold cursor default top-6 left-6 text-white bg-[#fa6607] p-5 rounded-full aspect-square text-xs flex items-center justify-center"
+      >
+        <p id="date" style="font-size: 16px">{datum}</p>
+      </div>
+  </div>
+
+  <div id="half" class="md:before:w-1/2 flex flex-col text-center py-2 px-4">
     <h3 id="event-title" class="font-medium text-lg cursor-default md:text-center pb-0">{title}</h3>
     <div id="event-content" class="flex flex-col flex-grow justify-between">
 
       <p id="event-description" class="md:text-center m-4">{description}</p>
 
       <div class="flex flex-row flow-grow justify-left md:text-left">
-        <div id="line" class ="bg-[#a7a7a7] w-1 rounded m-3"></div>
+        <div id="line" class ="bg-[#a7a7a7] w-0.5 rounded mx-3"></div>
         <div id="info" class="flex flex-col justify-between">
-          <p id="time" class="flex flex-row align-items-center my-1">
-            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> schedule </span>
+          <p id="time" class="flex flex-row align-items-center my-1 ">
+            <span class="material-symbols-outlined mr-1"> schedule </span>
             {time}
           </p>
           <p id="place" class="flex flex-row align-items-center my-1"> 
-            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> location_on </span>
+            <span class="material-symbols-outlined mr-1"> location_on </span>
             {place}
           </p>
           <p id="tickets" class="flex flex-row align-items-center my-1">
-            <span class="material-symbols-outlined mr-1" style="color:#fa6607"> local_activity </span>
+            <span class="material-symbols-outlined mr-1"> local_activity </span>
             {nrOfTickets + " st"}
           </p>
         </div>
@@ -51,7 +69,7 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
       {
         active && (
           <a href={link} target="_blank">
-            <button type="button" class="bg-[#fa6607] rounded cursor-pointer font-bold text-center text-white p-2 my-5 md:w-1/2">
+            <button type="button" class="bg-[#fa6607] rounded cursor-pointer font-bold text-center text-white p-2 my-5 md:w-2/3">
               {callToAction ? callToAction : "Anmäl dig nu!"}
             </button>
         </a>
