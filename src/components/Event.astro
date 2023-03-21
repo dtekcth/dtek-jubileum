@@ -11,8 +11,9 @@ export interface Props {
   callToAction?: string;
   active: boolean;
   ticketInfo?:string;
+  mail: string;
 }
-const { callToAction, title, description, time, place, nrOfTickets, img, link, datum, active, ticketInfo } =
+const { callToAction, title, description, time, place, nrOfTickets, img, link, datum, active, ticketInfo, mail } =
   Astro.props;
 ---
 
@@ -33,6 +34,16 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
       display: flex;
       flex: 1;
     }
+
+    .action{
+      transition: box-shadow 0.25s;
+    }
+
+    .action:hover {
+      transition: box-shadow 0.25s;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
   </style>
   <div id="half" class="rounded-right">
     <img class="object-cover" style="border-radius: 4px 0px 0px 4px;" src={img} alt="" />
@@ -69,7 +80,7 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
       {
         active && (
           <a href={link} target="_blank">
-            <button type="button" class="bg-[#fa6607] rounded cursor-pointer font-bold text-center text-white p-2 my-5 md:w-2/3">
+            <button type="button" class="action bg-[#fa6607] rounded cursor-pointer font-bold text-center text-white p-2 my-5 md:w-2/3">
               {callToAction ? callToAction : "Anmäl dig nu!"}
             </button>
         </a>
@@ -85,6 +96,8 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
           </div>
         )
       }
+
+      <p class="text-[#a7a7a7]"> Frågor: {mail}</p>
     
     </div>
   </div>

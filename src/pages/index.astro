@@ -18,14 +18,25 @@ import Layout from "../layouts/Layout.astro";
       font-size: large;
       margin: 8px;
     }
-    Event:hover {
-      cursor: pointer;
-    }
     .pt-4 {margin: 17px;}
+
+    @keyframes entrance {
+      from {opacity: 0%;
+      margin-top: 100px;}
+      to {opacity: 100%;
+        margin-top: 0px;}
+    }
+    
+
+    #event-cards {
+      animation-name: entrance;
+      animation-duration: 2s;
+    }
+
   </style>
   <div class="container mx-auto">
     <main class="flex flex-col gap-2 pt-2 mx-auto p-4 md:w">
-      <section class="text-center p-4" id="hero">
+      <section class=" flex flex-col align-center text-center p-4" id="hero">
         <h1>
           Välkommen till Dataeknologsektionens jubileumsvecka
         </h1>
@@ -33,85 +44,128 @@ import Layout from "../layouts/Layout.astro";
           8e-14e maj 2023
         </h2>
         <p>
-          Under veckan kommer du ha möjlighet att delta i flera olika evenemang arrangerade
+          Sektionen fyller 40 och det ska firas! Under veckan kommer du ha möjlighet att delta i flera olika evenemang arrangerade
           av sektionens olika kommitéer. Vi hoppas att ni ser framemot detta
-          lika mycket som vi!
+          lika mycket som vi.
         </p>
 
-        <div class="pt-4">
-          <a
-            href="formulär"
-            class="text-lg font-bold cursor-pointerrounded text-white bg-[#fa6607] hover:bg-[#d3641f] p-4 rounded"
-            >{"Intresseanmälan"}</a
-          >
-        </div>
         <section class="p-4" id="events">
           <h2 class="text-center font-bold text-lg p-4">Evenemang</h2>
-          <div class="flex flex-col gap-4">
-          <div class="flex flex-row flex-no-wrap gap-4 md:w">
-            <Event
-              title="Öppningscermoni med Programledningen"
-              datum="8/5"
-              description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
-              time="19:00 - 01:00"
-              place="Kårhuset"
-              nrOfTickets="100"
-              img={"oppningscermoni.jpg"}
-              callToAction={"Läs mer på Facebook!"}
-              link={"https://www.facebook.com"}
-              active= {true}
-            />
-            <Event
-              title="Lyxpub med Delta"
-              datum="9/5"
-              description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
-              time="19:00 - 01:00"
-              place="Basen"
-              nrOfTickets="100"
-              img={"pub2.jpg"}
-              callToAction={"Boka en plats!"}
-              active= {false}
-              ticketInfo={"Biljettsläpp x/x kl: x/x"}
-            />
+          <div id="event-cards" class="flex flex-col gap-4">
+            <div id="row1" class="flex flex-row flex-no-wrap gap-4 md:w">
+              <Event
+                title="Öppningscermoni med Programledningen"
+                datum="8/5"
+                description="Jubileumsveckan inleds med en lunch tillsammans med datas programledning. Det blir mat och presentationer av alumner. "
+                time="TBD"
+                place="Kårhuset"
+                nrOfTickets="TBD"
+                img={"oppningscermoni.jpg"}
+                callToAction={"Läs mer på Facebook!"}
+                link={"https://www.facebook.com"}
+                active= {true}
+                mail={"filip.lindset@dtek.se"}
+              />
+              <Event
+                title="Lyxpub med Delta"
+                datum="9/5"
+                description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
+                time="19:00 - 01:00"
+                place="Basen"
+                nrOfTickets="100"
+                img={"pub2.jpg"}
+                callToAction={"Boka en plats!"}
+                active= {false}
+                ticketInfo={"Biljettsläpp 11/4 kl: 12:00"}
+                mail={"carl.johansson@dtek.se"}
+              />
             </div>
-            <div class="flex flex-row flex-no-wrap gap-4 md:w">
-            <Event
-              title="Spelkväll med DLude"
-              datum="11/5"
-              description="Häng med på en kul spelkväll med DLude på i Spelhuset på Liseberg!"
-              time="19:00 - 01:00"
-              place="Lisebergs spelhus"
-              nrOfTickets="100"
-              img={"spel.jpg"}
-              link={"/"}
-              active= {false}
-              ticketInfo={"Biljettsläpp x/x kl: x/x"}
-            />
-            <Event
-              title="Bastu med DKAK och D6"
-              datum="12/5"
-              description="Häng med ut till Härryda för lite sittning, bad och bastu med D6 och DKAK. Biljettförsäljning kommer ske på länken här under!"
-              time="19:00 - 01:00"
-              place="Chalmersbastun"
-              nrOfTickets="100"
-              img={"bastulokal.jpg"}
-              active= {false}
-              ticketInfo={"Biljettsläpp x/x kl: x/x"}
-            />
+            <div id="row2" class="flex flex-row flex-no-wrap gap-4 md:w">
+                <Event
+                title="Provning med DKock"
+                datum="10/5"
+                description="Testa god mat och dryck med datas matlagningskommite DKock "
+                time="TBD"
+                place="TBD" 
+                nrOfTickets="100"
+                img={"musslor.jpg"}
+                active= {false}
+                ticketInfo={"Biljettsläpp 12/4 kl: 12:00"}
+                mail={"Jonas"}
+              />
+              <Event
+                title="Spelkväll med DLude"
+                datum="11/5"
+                description="Häng med på en kul spelkväll med DLude på i Spelhuset på Liseberg! Kvällen avslutas med spelkväll och mingel i Basen för de som vill."
+                time="TBD"
+                place="Lisebergs spelhus"
+                nrOfTickets="TBD"
+                img={"spel.jpg"}
+                link={"/"}
+                active= {false}
+                ticketInfo={"Biljettsläpp 17/4 kl: 12:00"}
+                mail={"conrad.olsson@dtek.se"}
+              />
             </div>
-            <Event
-              title="Bankett med Jubileumsarbetsgruppen"
-              description="Gå på en fet bankett. Biljettförsäljning kommer ske på länken här under!"
-              datum="13/5"
-              time="19:00 - 01:00"
-              place="Basen"
-              nrOfTickets="100"
-              img={"banket.jpg"}
-              callToAction={"Läs mer"}
-              active= {false}
-              ticketInfo={"Biljettsläpp x/x kl: x/x"}
-            />
+            <div id="row3"class="flex flex-row flex-no-wrap gap-4 md:w">
+              <Event
+                title="Bastu med DKAK och D6"
+                datum="12/5"
+                description="Häng med ut till Härryda för en go sittning med D6 och DKAK. Efteråt blir det bad och bastu för de som vill."
+                time="TBD"
+                place="Chalmersbastun"
+                nrOfTickets="TBD"
+                img={"bastulokal.jpg"}
+                active= {false}
+                ticketInfo={"Biljettsläpp 18/4 kl: 12:00"}
+                mail={"samuel.jonsson@dtek.se"}
+              />
+              <Event
+                title="Bankett med Jubileumsarbetsgruppen"
+                description="Jubileet avslutas med bankett! Vi startar med mingel på campus för att sedan gå på finsittning. Efteråt finns möjlighet att röra sig till Basen eller Gasquen!"
+                datum="13/5"
+                time="TBD"
+                place="Basen"
+                nrOfTickets="TBD"
+                img={"fin.jpg"}
+                active= {false}
+                ticketInfo={"Biljettsläpp 19/4 kl: 12:00"}
+                mail={"vera.svensson@dtek.se"}
+              />
+            </div>
           </div>
+        </section>
+        <!-- <div id="divider" class="w-[100%] h-0.5 bg-[#a7a7a7] mt-6 shadow"/> -->
+        <section class="p-4" id="info">
+          <h2 class="text-center font-bold text-lg p-4">Biljettinfo</h2>
+          <p>
+            Till alla arrangemang kommer man behöva köpa biljett.
+            Kostnaden för biljetterna kommer variera och kommer synas vid köp av biljett.
+            Eftersom platserna är väldigt begränsade rekomenderar vi att vara redo vid biljettsläppen.
+            Vi har en viss kvot student/alumn biljetter för varje arrangemang.
+            Detta innebär att biljettförsäljningen kommer skilja sig mellan de två grupperna: 
+          </p>
+            <div id="ticket-text" class="flex flex-row flex-no-wrap gap-4 md:w">
+              <div id="ticket-students" class="md:w-1/2 rounded border py-4 px-16 m-8">
+                <h3 class="font-medium text-lg cursor-default md:text-center pb-0">Studenter</h3>
+                <ul>
+                  <li> Fysiskt biljettsläpp i Basen</li>
+                  <li>En +1 (student)</li>
+                  <li>Biljettsläppen sker samma dag och tid som de digitala släppen</li>
+                </ul>
+
+              </div>
+              <div id="ticket-alumni" class="md:w-1/2 rounded border py-4 px-16 m-8">
+                <h3 class="font-medium text-lg cursor-default md:text-center pb-0">Alumner</h3>
+                <ul>
+                  <li> Biljetter köps digitalt via Tickstr</li>
+                  <li>Ingen +1. Köp endast biljett till dig själv och ev. andra alumner</li>
+                  <li>Datum och tid för biljettsläpp står på eventkorten</li>
+                </ul>
+              </div>
+            
+            </div>
+
         </section>
       </section>
     </main>
