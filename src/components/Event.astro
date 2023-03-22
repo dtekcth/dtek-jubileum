@@ -18,7 +18,7 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
 ---
 
 <div
-  id="event-card" class="flex flex-row gap-2 rounded shadow-lg border relative"
+  id="event-card" class="flex sm:flex-row flex-col gap-2 rounded shadow-lg border relative"
 >
   <style>
     #event-title{
@@ -54,7 +54,7 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, d
       </div>
   </div>
 
-  <div id="half" class="w-1/2 flex flex-col text-center py-2 px-4">
+  <div id="half" class="flex flex-col text-center py-2 px-4">
     <h3 id="event-title" class="font-medium text-lg cursor-default text-center pb-0">{title}</h3>
     <div id="event-content" class="flex flex-col flex-grow justify-between">
 
