@@ -10,8 +10,10 @@ import Layout from "../layouts/Layout.astro";
     }
     h1 {
       margin: 8px;
-      font-weight: bold;
-      font-size: xx-large;
+      font-weight: 800;
+      line-height: 72px;
+      font-size: 40px;
+      font-family: 'Raleway', sans-serif;
     }
     .date {
       font-weight: bold;
@@ -45,13 +47,14 @@ import Layout from "../layouts/Layout.astro";
           Välkommen till Datateknolog&shy;sektionens jubileumsvecka!
         </h1>
         <h2 class="date">
-          8e-14e maj 2023
+          8e-13e maj 2023
         </h2>
         <p>
           Sektionen fyller 40 och det ska firas! Under veckan kommer du ha möjlighet att delta i flera olika evenemang arrangerade
           av sektionens olika kommitéer. Vi hoppas att ni ser framemot detta
           lika mycket som vi.
         </p>
+        <h2 class="font-bold text-[#fa6607]">Informationen på denna hemsidan riktar sig endast till alumner. Digitala biljettsläpp gäller ej studenter.</h2>
 
         <section class="p-4" id="events">
           <h2 class="text-center font-bold text-lg p-4">Evenemang</h2>
@@ -59,89 +62,87 @@ import Layout from "../layouts/Layout.astro";
             <Event
               title="Öppningscermoni med Programledningen"
               datum="8/5"
-              description="Jubileumsveckan inleds med en lunch tillsammans med datas programledning. Det blir mat och presentationer av alumner. "
-              time="TBD"
+              description="Jubileumsveckan inleds med en lunch tillsammans med datas programledning. Det blir mat och presentationer av alumner."
+              time="11:00"
               place="Kårhuset"
-              nrOfTickets="TBD"
+              nrOfTickets="unlimited"
               img={"oppningscermoni.jpg"}
-              callToAction={"Läs mer på Facebook!"}
-              link={"https://www.facebook.com"}
-              active= {true}
+              ticketInfo={"Paxa senast 17/4"}
+              callToAction={"Paxa plats!"}
+              link={"https://forms.gle/86bbSLxLGjJVTmCg6"}
               mail={"filip.lindset@dtek.se"}
             />
             <Event
               title="Lyxpub med Delta"
               datum="9/5"
               description="Kom och testa på Deltas berömda ölutbud på en lite lyxare basenpub. "
-              time="19:00 - 01:00"
+              time="19:00 - 22:00 eller 22:00-01:00"
               place="Basen"
-              nrOfTickets="100"
+              nrOfTickets="100 st*"
               img={"pub2.jpg"}
-              callToAction={"Boka en plats!"}
-              active= {false}
-              ticketInfo={"Biljettsläpp 11/4 kl: 12:00"}
+              ticketInfo={"Biljettsläpp 10/4 kl: 19:00"}
+              link={"https://secure.tickster.com/sv/5mppxckw83l0ch4"}
               mail={"carl.johansson@dtek.se"}
             />
               <Event
-              title="Provning med DKock"
+              title="Tapasprovning med DKock"
               datum="10/5"
               description="Testa god mat och dryck med datas matlagningskommite DKock "
-              time="TBD"
-              place="TBD" 
-              nrOfTickets="100"
+              time="15:00 eller 19:00"
+              place="Rotary Pub" 
+              nrOfTickets="50 st*"
               img={"musslor.jpg"}
-              active= {false}
-              ticketInfo={"Biljettsläpp 12/4 kl: 12:00"}
-              mail={"Jonas"}
+              ticketInfo={"Biljettsläpp 11/4 kl: 19:00"}
+              link={"https://secure.tickster.com/sv/gw2k72ak9a393ne"}
+              mail={"jonas.hedlund@dtek.se"}
             />
             <Event
               title="Spelkväll med DLude"
               datum="11/5"
               description="Häng med på en kul spelkväll med DLude på i Spelhuset på Liseberg! Kvällen avslutas med spelkväll och mingel i Basen för de som vill."
-              time="TBD"
-              place="Lisebergs spelhus"
-              nrOfTickets="TBD"
+              time="19:00-21:00"
+              place="Spelhuset, Liseberg"
+              nrOfTickets="75 st*"
               img={"spel.jpg"}
-              link={"/"}
-              active= {false}
-              ticketInfo={"Biljettsläpp 17/4 kl: 12:00"}
+              ticketInfo={"Biljettsläpp 12/4 kl: 19:00"}
+              link={"https://secure.tickster.com/sv/wglpan92nh6cl6f"}
               mail={"conrad.olsson@dtek.se"}
             />
             <Event
               title="Bastu med DKAK och D6"
               datum="12/5"
-              description="Häng med ut till Härryda för en go sittning med D6 och DKAK. Efteråt blir det bad och bastu för de som vill."
-              time="TBD"
+              description="Häng med ut till Härryda för en go sittning med D6 och DKAK. Det blir bad, bastu, sittning och eftersläpp! Buss går från Chalmers 16:45 och hem 01:00"
+              time="16:45-01:00"
               place="Chalmersbastun"
-              nrOfTickets="TBD"
+              nrOfTickets="40 st*"
               img={"bastulokal.jpg"}
-              active= {false}
-              ticketInfo={"Biljettsläpp 18/4 kl: 12:00"}
+              ticketInfo={"Biljettsläpp 17/4 kl: 19:00"}
+              link={"https://secure.tickster.com/sv/upehhylxwgjj0db"}
               mail={"samuel.jonsson@dtek.se"}
             />
             <Event
-              title="Bankett med Jubileumsarbetsgruppen"
-              description="Jubileet avslutas med bankett! Vi startar med mingel på campus för att sedan gå på finsittning. Efteråt finns möjlighet att röra sig till Basen eller Gasquen!"
+              title="Finsittning med Jubileumsgruppen"
+              description="Jubileet avslutas med finsittning! Vi startar med mingel på campus för att sedan gå på sittning. Efteråt finns möjlighet att röra sig till Basen eller Gasquen!"
               datum="13/5"
-              time="TBD"
-              place="Basen"
-              nrOfTickets="TBD"
+              time="15:00-00:00"
+              place="Campus"
+              nrOfTickets="100 st*"
               img={"fin.jpg"}
-              active= {false}
-              ticketInfo={"Biljettsläpp 19/4 kl: 12:00"}
+              ticketInfo={"Biljettsläpp 18/4 kl: 19:00"}
+              link={"https://secure.tickster.com/sv/1g6fphw5gef2mhp"}
               mail={"vera.svensson@dtek.se"}
             />
           </div>
         </section>
-
         <section class="p-4" id="info">
           <h2 class="text-center font-bold text-lg p-4">Biljettinfo</h2>
+          <p>* Biljettantalet syftar endast till antalet alumnbiljetter</p>
           <p>
-            Till alla arrangemang kommer man behöva köpa biljett.
-            Kostnaden för biljetterna kommer variera och kommer synas vid köp av biljett.
+            Till de flesta arrangemang kommer man behöva köpa biljett.
+            Kostnaden för biljetterna varierar och synas vid köp av biljett.
             Eftersom platserna är väldigt begränsade rekomenderar vi att vara redo vid biljettsläppen.
-            Vi har en viss kvot student/alumn biljetter för varje arrangemang.
-            Detta innebär att biljettförsäljningen kommer skilja sig mellan de två grupperna: 
+            Vi har en viss kvot student/alumn biljetter för varje arrangemang och antalet som visas på hemsidan syftar till antalet alumnbiljetter.
+            Biljettförsäljningen kommer skilja sig mellan de två grupperna: 
           </p>
             <div id="ticket-text" class="grid xl:grid-cols-2 grid-cols-1 gap-12 mt-8">
               <div id="ticket-students" class="rounded border py-4 px-16">
@@ -149,8 +150,9 @@ import Layout from "../layouts/Layout.astro";
 
                 <ul>
                   <li> Fysiskt biljettsläpp i Basen</li>
+                  <li> Biljättsläpp sker under lunch, kl: 12-13</li>
                   <li>En +1 (student)</li>
-                  <li>Biljettsläppen sker samma dag och tid som de digitala släppen</li>
+                  <li>Biljettsläppen sker samma dag som de digitala släppen</li>
                 </ul>
               </div>
 
@@ -158,7 +160,7 @@ import Layout from "../layouts/Layout.astro";
                 <h3 class="font-medium text-lg cursor-default text-center pb-0">Alumner</h3>
 
                 <ul>
-                  <li> Biljetter köps digitalt via Tickstr</li>
+                  <li> Biljetter köps digitalt via Tickster</li>
                   <li>Ingen +1. Köp endast biljett till dig själv och ev. andra alumner</li>
                   <li>Datum och tid för biljettsläpp står på eventkorten</li>
                 </ul>
