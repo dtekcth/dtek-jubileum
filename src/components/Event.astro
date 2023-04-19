@@ -12,8 +12,9 @@ export interface Props {
   callToAction?: string;
   ticketInfo?:string;
   mail: string;
+  deactivate?: boolean
 }
-const { callToAction, title, description, time, place, nrOfTickets, img, link, linkfb, datum, ticketInfo, mail } =
+const { callToAction, title, description, time, place, nrOfTickets, img, link, linkfb, datum, ticketInfo, mail, deactivate } =
   Astro.props;
 ---
 
@@ -91,11 +92,17 @@ const { callToAction, title, description, time, place, nrOfTickets, img, link, l
       <div class="mt-5 mb-2">
         <p class="">{ticketInfo}</p>
         <div class="grid md:grid-cols-2 grid-cols-1 gap-2 mx-6">
-        <a href={link} target="_blank">
-          <button type="button" class="action bg-[#fa6607] border-[#fa6607] border-2 rounded cursor-pointer font-bold text-center text-white p-2 my-1 w-[100%]">
-            {callToAction ? callToAction : "Köp biljett!"}
+        {!deactivate ? 
+          <a href={link} target="_blank">
+            <button type="button" class="action bg-[#fa6607] border-[#fa6607] border-2 rounded cursor-pointer font-bold text-center text-white p-2 my-1 w-[100%]">
+              {callToAction ? callToAction : "Köp biljett!"}
+            </button>
+          </a>
+        :
+          <button type="button" class="bg-[#ffb07e] border-[#ffb07e] border-2 rounded cursor-default font-bold text-center text-white p-2 my-1 w-[100%]">
+            {callToAction ? callToAction : "SLUTSÅLT"}
           </button>
-        </a>
+        }
         <a href={linkfb} target="_blank">
           <button type="button" class="action2 border-[#fa6607] border-2 rounded cursor-pointer font-bold text-center text-[#fa6607] p-2 my-1 w-[100%]">
             {"Läs mer"}
